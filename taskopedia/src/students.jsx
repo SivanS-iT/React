@@ -1,19 +1,18 @@
-export default function  Students() {
-    const fullName = "Chris Pattern";
-    const programingExp = 2;
+
+export default function  Student(props) {
   return(
     <div className="container p-4">
-      <div className="row">Students enroled</div>
       <div className="row border">
         <div className="col-2">
-          <img src={`https://ui-avatars.com/api/?name=${fullName}`} className="w-10"></img>
+          <img src={props.headShot} className="w-10 py-2" ></img>
         </div>
         <div className="col-10">
-        {fullName}<br/>
-        Programing Experiance {programingExp} years
+        {props.fullName}<br/>
+        Programing Experiance {props.programingExp} years
         </div>
       </div>
     </div>
   )
   }
 
+//{`https://ui-avatars.com/api/?name=${props.fullName}`}

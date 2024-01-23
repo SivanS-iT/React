@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./CSS/style.css";
-import Header from "./header";
-import Students from "./students";
+import Header from "./Header";
+import Students from "./Students";
+import Footer from "./Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -28,15 +29,14 @@ function MainBody() {
 }
 
 
-
-function Footer() {
-  return <p style={{ color: "gray", backgroundColor: "black" }}> nice </p>;
-}
 root.render(
   <div>
     <Header></Header>
     <MainBody></MainBody>
-    <Students></Students>
+    <div className="container">Students enroled</div>
+    <Students programingExp={3} fullName="Ivancek Veliki" headShot="https://api.lorem.space/image/face?w=150&h=150"></Students>
+    <Students programingExp={2} fullName="Nesto Novo" headShot="https://api.lorem.space/image/face?w=150&h=150"></Students>
+    <Students programingExp={5} fullName="Daniel Fahenburger" headShot="https://api.lorem.space/image/face?w=150&h=150"></Students>
     <Footer></Footer>
   </div>
 );
