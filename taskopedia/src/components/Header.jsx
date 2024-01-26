@@ -1,4 +1,4 @@
-import logo from "./react.png";
+import logo from "../images/react.png";
 
 function MainHeader() {
   return (
@@ -24,7 +24,7 @@ const subHeaderStyle = {
 };
 
 function SubHeader() {
-  return <h2 style={subHeaderStyle}>Nothing to see here</h2>;
+  return <h2 style={subHeaderStyle} className="text-center">Nothing to see here</h2>;
 }
 
 export default function Header() {
