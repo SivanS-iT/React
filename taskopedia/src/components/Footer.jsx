@@ -1,4 +1,4 @@
-export default function Footer() {
+const  Footer = (props) => {
   return(
   <p
     style={{
@@ -11,3 +11,5 @@ export default function Footer() {
     nice
   </p>
 )}
+
+export default Footer;

@@ -27,7 +27,7 @@ function SubHeader() {
   return <h2 style={subHeaderStyle} className="text-center">Nothing to see here</h2>;
 }
 
-export default function Header() {
+const Header = (props) => {
   return (
     <div>
       <MainHeader></MainHeader>
@@ -35,3 +35,5 @@ export default function Header() {
     </div>
   );
 }
+
+export default Header;
