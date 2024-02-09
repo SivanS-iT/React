@@ -2,26 +2,6 @@ import Contact from "./Contact";
 
 const GeneralContacts = (props) => {
   return (
-    <div>
-      {props.contacts.map((contact, index) => (
-        <Contact
-          contact={contact}
-          key={index}
-          //favoriteClick={props.favoriteClick}
-          //deleteContact={props.deleteContact}
-          //updateClick={props.updateClick}
-        ></Contact>
-      ))}
-    </div>
-  );
-};
-
-export default GeneralContacts;
-
-/* import Contact from "./Contact";
-
-const GeneralContacts = (props) => {
-  return (
     <div
       className="col-12 py-2"
       style={{ borderRadius: "10px", backgroundColor: "#323637" }}
@@ -32,9 +12,9 @@ const GeneralContacts = (props) => {
           <Contact
             contact={contact}
             key={index}
-            favoriteClick={props.favoriteClick}
-            deleteContact={props.deleteContact}
-            updateClick={props.updateClick}
+            //favoriteClick={props.favoriteClick}
+            //deleteContact={props.deleteContact}
+            //updateClick={props.updateClick}
           ></Contact>
         ))}
       </div>
@@ -42,4 +22,4 @@ const GeneralContacts = (props) => {
   );
 };
 
-export default GeneralContacts; */
+export default GeneralContacts; 

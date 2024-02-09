@@ -49,11 +49,6 @@ const Contact = (props) => {
           ></i>
         </button>
       </div>
-      
-
-      <button className="btn btn-danger form-control">
-        {props.contact.name}
-      </button>
     </div>
   );
 };
