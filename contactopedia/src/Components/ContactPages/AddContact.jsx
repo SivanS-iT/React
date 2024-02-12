@@ -15,12 +15,20 @@ class AddContact extends React.Component {
     const email = e.target.elements.contactEmail.value.trim();
     const phone = e.target.elements.contactPhone.value.trim();
     //const id = e.target.elements.contactId.value.trim();
-    this.props.handleAddContact({
+    const response = this.props.handleAddContact({
       name: name,
       email: email,
       phone: phone,
       //id: id,
     });
+
+    if (response.status === "success") {
+      this.setState({ errorMessage: undefined, successMessage: response.msg });
+      document.querySelector(".contact-form").reset();
+      //document.querySelector(".contact-form").reset();
+    } else {
+      this.setState({ errorMessage: response.msg, successMessage: undefined });
+    }
   };
 
   render() {
@@ -55,6 +63,22 @@ class AddContact extends React.Component {
                 name="contactPhone"
               ></input>
             </div>
+
+            {this.state.errorMessage === undefined ? (
+              <div></div>
+            ) : (
+              <div className="col-12 text-center text-danger">
+                {this.state.errorMessage}
+              </div>
+            )}
+
+            {this.state.successMessage === undefined ? (
+              <div></div>
+            ) : (
+              <div className="col-12 text-center text-success">
+                {this.state.successMessage}
+              </div>
+            )}
 
             <div className="col-12 col-md-6 offset-md-3 p-1">
               <button className="btn btn-primary btn-sm form-control">

@@ -41,16 +41,46 @@ class ContactIndex extends React.Component {
   }
 
   handleAddContact = (newContact) => {
-    const newFinalContact = {
-      ...newContact,
-      id: this.state.contactList[this.state.contactList.length - 1].id + 1,
-      isFavorite: false,
-    };
+    if (newContact.name === "") {
+      return { status: "failure", msg: "Please Enter a valid Name" };
+    } else if (newContact.phone === "") {
+      return { status: "failure", msg: "Please Enter a valid Phone Number" };
+    }
+
+    const duplicateRecord = this.state.contactList.filter((x) => {
+      if (x.name === newContact.name && x.phone === newContact.phone) {
+        return true;
+      }
+    });
+    if (duplicateRecord.length > 0) {
+      return { status: "failure", msg: "Duplicate Record" };
+    } else {
+      const newFinalContact = {
+        ...newContact,
+        id: this.state.contactList[this.state.contactList.length - 1].id + 1,
+        isFavorite: false,
+      };
+      this.setState((prevState) => {
+        return {
+          contactList: prevState.contactList.concat([newFinalContact]),
+        };
+      });
+      return { status: "success", msg: "Contact was added succesfully" };
+    }
+  };
+
+  handleToggleFavorites = (contact) => {
     this.setState((prevState) => {
       return {
-        contactList: prevState.contactList.concat([newFinalContact]),
+        contactList: prevState.contactList.map((obj) => {
+          if (obj.id == contact.id) {
+            return { ...obj, isFavorite: !obj.isFavorite };
+          }
+          return obj;
+        }),
       };
     });
+    console.log(contact);
   };
 
   render() {
@@ -79,8 +109,9 @@ class ContactIndex extends React.Component {
               <div className="col-8 offset-2 row">
                 <FavoriteContacts
                   contacts={this.state.contactList.filter(
-                    (u) => u.isFavorite == true
+                    (u) => u.isFavorite === true
                   )}
+                  favoriteClick={this.handleToggleFavorites}
                 />
               </div>
             </div>
@@ -89,8 +120,9 @@ class ContactIndex extends React.Component {
               <div className="col-8 offset-2 row">
                 <GeneralContacts
                   contacts={this.state.contactList.filter(
-                    (u) => u.isFavorite == false
+                    (u) => u.isFavorite === false
                   )}
+                  favoriteClick={this.handleToggleFavorites}
                 />
               </div>
             </div>
