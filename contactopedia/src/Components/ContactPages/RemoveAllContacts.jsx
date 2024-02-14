@@ -3,7 +3,7 @@ const RemoveAllContact = (props) => {
       <div>
         <button
           className="btn btn-danger form-control"
-          //onClick={() => props.handleRemoveAllContact()}
+          onClick={() => props.handleRemoveAllContact()}
         >
           Remove All
         </button>
