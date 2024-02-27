@@ -26,14 +26,30 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <Link className="nav-link" to="/">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active text-danger" : "nav-link"
+                }
+                aria-current="page"
+                to="/"
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active text-danger" : "nav-link"
+                }
+                to="/about"
+              >
                 About
-              </Link>
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/cryptodetail/BTC/10">
+                Crypto detail
+              </NavLink>
             </li>
             <li className="nav-item dropdown">
               <a
@@ -52,12 +68,12 @@ function Header() {
                   Action
                 </Link>
                 <Link class="dropdown-item" to="/product/list">
-                  Product list 
+                  Product list
                 </Link>
                 <Link class="dropdown-item" to="/product/create">
                   Product Create
                 </Link>
-                <Link class="dropdown-item" to="/product/details">
+                <Link class="dropdown-item" to="/product/details/3">
                   Product details
                 </Link>
               </div>
