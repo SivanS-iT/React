@@ -4,6 +4,8 @@ import Header from "./app/layout/Header";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import Counter from "./components/Counter";
+import DestinationList from "./components/DestinationList";
+import DestinationFact from "./components/DestinationFact";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -11,6 +13,8 @@ root.render(
     <Provider store={store}>
       <Header />
       <Counter />
+      <DestinationList />
+      <DestinationFact/>
     </Provider>
   </React.StrictMode>
 );

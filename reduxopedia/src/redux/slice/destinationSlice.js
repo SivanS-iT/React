@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 const initalState = () => {
   return {
     destinations: [
@@ -23,10 +24,15 @@ const initalState = () => {
 };
 
 export const destinationSlice = createSlice({
-    name: "destination",
-    initialState: initalState,
-    reducer: {
+  name: "destination",
+  initialState: initalState,
+  reducers: {
+    destinationClicked: (state, action) => {
+      state.destinationSelected = action.payload;
+      //console.log(action);
+    },
   },
 });
 
+export const { destinationClicked } = destinationSlice.actions;
 export const destinationReducer = destinationSlice.reducer;
