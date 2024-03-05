@@ -3,20 +3,26 @@
     {
       "id": "46.11753170262962",
       "city": "Bistrica",
-      "country": "Croatien",
+      "country": "Croatienasd",
       "daysNeeded": 8
     },
     {
-      "id": 78.03014522569313,
+      "id": "78.03014522569313",
       "city": "Nije",
       "country": "ovo",
       "daysNeeded": 9
     },
     {
-      "id": 58.40316868682549,
+      "id": "58.40316868682549",
       "city": "Sto ",
       "country": "Da",
       "daysNeeded": 9
+    },
+    {
+      "id": "34.46744721512014",
+      "city": "asd",
+      "country": "asd",
+      "daysNeeded": 4
     }
   ]
 }
