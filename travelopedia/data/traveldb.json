@@ -1,16 +1,22 @@
 {
   "destination": [
     {
-      "id": "73.38401045629419",
-      "city": "",
-      "country": "",
-      "daysNeeded": 4
+      "id": "46.11753170262962",
+      "city": "Bistrica",
+      "country": "Croatien",
+      "daysNeeded": 8
     },
     {
-      "id": "62.77182046182084",
-      "city": "asd",
-      "country": "asd",
-      "daysNeeded": 4
+      "id": 78.03014522569313,
+      "city": "Nije",
+      "country": "ovo",
+      "daysNeeded": 9
+    },
+    {
+      "id": 58.40316868682549,
+      "city": "Sto ",
+      "country": "Da",
+      "daysNeeded": 9
     }
   ]
 }
